@@ -1,13 +1,13 @@
 import { useMemo, useState } from "react";
 import type { F1AthleteData, F1LeaderboardEntry } from "../types/LeaderBoard";
-import { initialMockData } from "../data/mockData";
+import { initialParticipants } from "../data/mockData";
 import { buildLeaderboard } from "../lib/leaderboardUtils";
 import LeaderBoardRow from "./LeaderBoardRow";
 import AddEntryModal from "./AddEntryModal";
 
 export default function LeaderBoard() {
   const [participants, setParticipants] =
-    useState<F1AthleteData[]>(initialMockData);
+    useState<F1AthleteData[]>(initialParticipants);
 
   const [showAddEntryForm, setShowAddEntryForm] = useState(false);
 
@@ -23,7 +23,7 @@ export default function LeaderBoard() {
   return (
     <>
       <div className="flex flex-col justify-center items-center py-10 px-4 md:py-20">
-        <h1 className="text-4xl md:text-6xl text-center font-bold text-white text-shadow-lg">
+        <h1 className="text-4xl md:text-6xl text-center font-bold text-white text-shadow-lg/50">
           LEADERBOARD
         </h1>
 
